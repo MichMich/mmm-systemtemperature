@@ -49,7 +49,7 @@ The following properties can be configured:
 
 		<tr>
 			<td><code>prependString</code></td>
-			<td>The text that will be shown before the temperature.<br>
+			<td>The text that will be shown before the temperature.
 				<br><b>Default value:</b> <code>'System temperature: '</code>
 			</td>
 		</tr>
