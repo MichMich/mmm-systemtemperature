@@ -1,4 +1,4 @@
-# Module: Hello World
+# Module: MM-SystemTemperature
 This MagicMirror modules allows you to show your processor temperature on you mirror. Currently it only works with a Raspberry Pi.
 
 
