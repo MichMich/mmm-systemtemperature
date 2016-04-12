@@ -1,4 +1,4 @@
-# Module: MM-SystemTemperature
+# Module: MMM-SystemTemperature
 This MagicMirror modules allows you to show your processor temperature on you mirror. Currently it only works with a Raspberry Pi.
 
 
@@ -11,7 +11,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ````
-git clone https://github.com/MichMich/mm-systemtemperature.git
+git clone https://github.com/MichMich/mmm-systemtemperature.git
 ````
 
 Configure the module in your `config.js` file.
@@ -22,7 +22,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		module: 'systemtemperature',
+		module: 'mmm-systemtemperature',
 		position: 'top_center',	// This can be any of the regions.
 		classes: 'small dimmed', // Add your own styling. Optional.
 		config: {
