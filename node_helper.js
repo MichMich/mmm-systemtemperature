@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
 				console.log(error);
 				return;
 			}
-	  		self.sendSocketNotification('TEMPERATURE', stdout.replace('temp=',''));
+	  		self.sendSocketNotification('TEMPERATURE', stdout.replace('temp=','').replace('\'','\°'));
 		});
 	}
 });
