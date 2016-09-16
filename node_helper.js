@@ -4,11 +4,22 @@ var exec = require('child_process').exec;
 
 
 module.exports = NodeHelper.create({
-	start: function function_name () {
+	start: function() {
+		console.log("Starting node helper: " + this.name);
+	},
+
+	// Subclass socketNotificationReceived received.
+	socketNotificationReceived: function(notification, payload) {
 		var self = this;
-		setInterval(function() {
-			self.sendTemperature();
-		}, 1000);
+
+		if (notification === 'CONFIG') {
+			this.config = payload;
+
+			setInterval(function() {
+				self.sendTemperature();
+			}, this.config.updateInterval);
+		}
+		
 	},
 
 	sendTemperature: function() {
@@ -18,7 +29,7 @@ module.exports = NodeHelper.create({
 				console.log(error);
 				return;
 			}
-	  		self.sendSocketNotification('TEMPERATURE', stdout.replace('temp=','').replace('\'','\°'));
+	  	self.sendSocketNotification('TEMPERATURE', stdout.replace('temp=','').replace('\'','\°'));
 		});
 	}
 });

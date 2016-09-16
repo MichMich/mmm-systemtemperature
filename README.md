@@ -53,5 +53,22 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>'System temperature: '</code>
 			</td>
 		</tr>
+
+		<tr>
+			<td><code>updateInterval</code></td>
+			<td>How often does the content needs to be fetched? (Milliseconds)
+				<br><b>Possible values:</b> <code>1000</code> - <code>86400000</code>
+				<br><b>Default value:</b> <code>5000</code> (5 seconds)
+			</td>
+		</tr>
+
+		<tr>
+			<td><code>animationSpeed</code></td>
+			<td>Speed of the update animation. (Milliseconds)
+				<br><b>Possible values:</b> <code>0</code> - <code>5000</code>
+				<br><b>Default value:</b> <code>0</code> (animation off)
+			</td>
+		</tr>
+
 	</tbody>
 </table>
