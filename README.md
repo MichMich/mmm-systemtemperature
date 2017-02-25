@@ -70,5 +70,13 @@ The following properties can be configured:
 			</td>
 		</tr>
 
+		<tr>
+			<td><code>unit</code></td>
+			<td>Temperature unit of measurement
+				<br><b>Possible values:</b> <code>c</code> (Celsius), <code>f</code> (fahrenheit), <code>k</code> (Kelvin)
+				<br><b>Default value:</b> <code>c</code> (Celsius)
+			</td>
+		</tr>
+
 	</tbody>
 </table>
