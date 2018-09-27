@@ -38,7 +38,6 @@ The following properties can be configured:
 
 
 <table width="100%">
-	<!-- why, markdown... -->
 	<thead>
 		<tr>
 			<th>Option</th>
@@ -46,14 +45,12 @@ The following properties can be configured:
 		</tr>
 	<thead>
 	<tbody>
-
 		<tr>
 			<td><code>prependString</code></td>
 			<td>The text that will be shown before the temperature.
 				<br><b>Default value:</b> <code>'System temperature: '</code>
 			</td>
 		</tr>
-
 		<tr>
 			<td><code>updateInterval</code></td>
 			<td>How often does the content needs to be fetched? (Milliseconds)
@@ -61,7 +58,6 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>5000</code> (5 seconds)
 			</td>
 		</tr>
-
 		<tr>
 			<td><code>animationSpeed</code></td>
 			<td>Speed of the update animation. (Milliseconds)
@@ -69,7 +65,6 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>0</code> (animation off)
 			</td>
 		</tr>
-
 		<tr>
 			<td><code>unit</code></td>
 			<td>Temperature unit of measurement
@@ -77,6 +72,5 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>c</code> (Celsius)
 			</td>
 		</tr>
-
 	</tbody>
 </table>
