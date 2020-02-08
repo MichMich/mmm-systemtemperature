@@ -1,5 +1,4 @@
 var NodeHelper = require("node_helper");
-var sys = require('sys');
 var exec = require('child_process').exec;
 
 
