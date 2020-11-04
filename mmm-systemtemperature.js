@@ -8,7 +8,7 @@ Module.register("mmm-systemtemperature",{
 	},
 
 	start: function() {
-		this.temperature = 'fetching ...';
+		this.temperature = this.translate("LOADING");
 		this.sendSocketNotification('CONFIG', this.config);
 	},
 
@@ -24,22 +24,22 @@ Module.register("mmm-systemtemperature",{
 		var wrapper = document.createElement("div");
 
 		// Do unit any conversions
-		if(this.temperature!='fetching ...' && this.config.unit.toLowerCase()!='c') {
-			if(this.config.unit.toLowerCase()=='f')
+		var unit = this.config.unit.toLowerCase();
+		if (this.temperature !== this.translate("LOADING") && unit !== 'c') {
+			if (unit === 'f') {
 				this.temperature = parseFloat(this.temperature) * 9 / 5 + 32;
-			else if(this.config.unit.toLowerCase()=='k')
+			} else if (unit === 'k') {
 				this.temperature = parseFloat(this.temperature) - 273.15;
-
+			}
 			// Round off the temperature to 2 decimal places
-			this.temperature = Math.round(parseFloat(this.temperature*100))/100;
+			this.temperature = Math.round(parseFloat(this.temperature * 100)) / 100;
 		}
 
-
 		// Append &deg; + unit
-		if(this.temperature!='fetching ...')
-			this.temperature += '&deg;'+this.config.unit.toUpperCase();
-
+		if (this.temperature != this.translate("LOADING")) {
+			this.temperature += '&deg;' + this.config.unit.toUpperCase();
+		}
 		wrapper.innerHTML = this.config.prependString + this.temperature;
 		return wrapper;
-	}
+	},
 });
