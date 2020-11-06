@@ -1,6 +1,6 @@
 # Module: MMM-SystemTemperature
 This MagicMirror modules allows you to show your processor temperature on you mirror. Currently it only works with a Raspberry Pi.
-
+It also allows to safely shutdown the Raspberry Pi using [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control) if you configure it.
 
 ## Installation
 
@@ -12,6 +12,11 @@ cd ~/MagicMirror/modules
 Clone this repository:
 ````
 git clone https://github.com/MichMich/mmm-systemtemperature.git
+````
+
+Install dependencies:
+````
+npm install
 ````
 
 Configure the module in your `config.js` file.
@@ -70,6 +75,21 @@ The following properties can be configured:
 			<td>Temperature unit of measurement
 				<br><b>Possible values:</b> <code>c</code> (Celsius), <code>f</code> (fahrenheit), <code>k</code> (Kelvin)
 				<br><b>Default value:</b> <code>c</code> (Celsius)
+			</td>
+		</tr>
+		<tr>
+			<td><code>warning</code></td>
+			<td>Specific config for <code>warning</code> state
+				<br><b>Possible values:</b> <code>{ temp: 0-999, color: '#HEX', command: Object }</code>
+				<br><b>Default value:</b> <code>{ temp: 60, color: 'orange', command: undefined }</code> 
+			</td>
+		</tr>
+		<tr>
+			<td><code>critical</code></td>
+			<td>Specific config for <code>critical</code> state
+				<br><b>Possible values:</b> <code>{ temp: 0-999, color: '#HEX', command: Object  }</code>
+				<br><b>Default value:</b> <code>{ temp: 75, color: 'red', command: { notification: 'REMOTE_ACTION', payload: { action: 'SHUTDOWN' } } }</code> 
+				<br><b>NOTE:</b> The <code>REMOTE_ACTION</code> notification (<code>SHUTDOWN</code> and <code>MONITOROFF</code>) actions require the <a href="https://github.com/Jopyth/MMM-Remote-Control">MMM-Remote-Control</a> module to be installed.
 			</td>
 		</tr>
 	</tbody>
