@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
 		
 		// Since on 64 bit OS's like Raspbian, path to vcgencmd is different 
 		// we need to adjust it accordingly
-		if (fs.existsSync(path) === false) {
+		if (fs.existsSync(command) === false) {
 		  command = "/usr/bin/vcgencmd measure_temp"
 		}
 		
