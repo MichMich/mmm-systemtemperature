@@ -1,5 +1,6 @@
 var NodeHelper = require("node_helper");
 var exec = require('child_process').exec;
+var fs = require('fs');
 
 module.exports = NodeHelper.create({
 	start: function() {
@@ -17,7 +18,15 @@ module.exports = NodeHelper.create({
 	},
 
 	sendTemperature: function() {
-		exec("/opt/vc/bin/vcgencmd measure_temp", (error, stdout, stderr) => {
+		var command = "/opt/vc/bin/vcgencmd measure_temp"
+		
+		// Since on 64 bit OS's like Raspbian, path to vcgencmd is different 
+		// we need to adjust it accordingly
+		if (fs.existsSync(path) === false) {
+		  command = "/usr/bin/vcgencmd measure_temp"
+		}
+		
+		exec(command, (error, stdout, stderr) => {
 			if (error) {
 				console.log(error);
 				return;
