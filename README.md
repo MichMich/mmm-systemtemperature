@@ -1,5 +1,5 @@
 # Module: MMM-SystemTemperature
-This MagicMirror modules allows you to show your processor temperature on you mirror. Currently it only works with a Raspberry Pi.
+This MagicMirror modules allows you to show your processor temperature on you mirror.
 It also allows to safely shutdown the Raspberry Pi using [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control) if you configure it.
 
 ## Installation
